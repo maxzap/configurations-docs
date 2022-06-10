@@ -1,0 +1,66 @@
+Configuraciones Basicas Ubuntu
+JDK
+
+Versiones de java disponibles
+update-java-alternatives --list
+
+
+Instalar la ultima version disponible
+sudo apt install default-jdk
+
+Intalar una version especifica
+sudo apt install openjdk-8-jdk
+
+switch entre versiones de jre
+sudo update-alternatives --config java
+
+switch entre versiones de jdk
+sudo update-alternatives --config javac 
+
+Seteamos la variable de entorno
+sudo nano /etc/environment
+JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64/bin/"
+
+para que tome los cambios en la terminal en la que estamos
+source /etc/environment 
+
+validar la variable de entorno
+echo $JAVA_HOME
+
+
+setear un bash minimalista
+
+  sudo snap install starship 
+  gedit .bashrc 
+
+agregar la siguiente linea al final del archivo
+  eval "$(starship init bash)"
+
+modificar el tema de la terminal
+	sudo apt-get install dconf-cli
+	sudo apt install git
+	git clone https://github.com/dracula/gnome-terminal
+	cd gnome-terminal
+	./install.sh
+
+MOdificar gedit
+	wget https://raw.githubusercontent.com/dracula/gedit/master/dracula.xml
+	Move the file to gedit style's folder:
+	mv dracula.xml $HOME/.local/share/gedit/styles/
+	Activate in Gedit's preferences dialog
+
+Cambiar modo de inicio
+	sudo gedit /etc/default/grub
+	GRUB_TIMEOUT_STYLE=MENU
+	GRUB_TIMEOUT=2
+	sudo update-grub
+
+Configurar github
+	git config --global user.name "Maximiliano Zapata"
+  git config --global user.email "maxzap@gmail.com"
+	ls -al ~/.ssh (lista los archivos ssh)
+	ssh-keygen -t ed25519 -C "maxzap@gmail.com" (genera un ssh)
+	eval "$(ssh-agent -s)"
+	ssh-add ~/.ssh/id_ed25519 (guarda la parafrase en el agente de ssh)
+	cat ~/.ssh/id_ed25519.pub (editamos el .pub, copiamos el contenido y lo guardo en github)
+	***** asegurate de clonar un repo con ssh *****
