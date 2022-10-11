@@ -136,5 +136,9 @@ Instalar entorno kb8 (https://kubernetes.io/docs/tasks/tools/install-kubectl-lin
 	Test to ensure the version you installed is up-to-date:
 		kubectl version --client
 	Or use this for detailed view of version:
-		kubectl version --client --output=yaml    
+		kubectl version --client --output=yaml
+Instalar Miniqube (Gestion kb8) https://minikube.sigs.k8s.io/docs/start/
+	curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+	sudo install minikube-linux-amd64 /usr/local/bin/minikube
+	
 		
