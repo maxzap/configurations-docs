@@ -140,5 +140,11 @@ Instalar entorno kb8 (https://kubernetes.io/docs/tasks/tools/install-kubectl-lin
 Instalar Miniqube (Gestion kb8) https://minikube.sigs.k8s.io/docs/start/
 	curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
 	sudo install minikube-linux-amd64 /usr/local/bin/minikube
-	
+
+Install the Heroku CLI
+	Download and install the Heroku CLI.
+	--> https://devcenter.heroku.com/articles/heroku-cli
+		
+	Comando para instalar heroku cli en ubuntu.
+	--> curl https://cli-assets.heroku.com/install-ubuntu.sh | sh
 		
